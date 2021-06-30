@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+int main()
+{
+    std::string Response[] = {
+         "TE-AM AUZIT!",
+         „ASA, VORBITI CU MINE”,
+         „CONTINUATI, ASCULT.”,
+         "CONVERSATIE FOARTE INTERESANTA.",
+         "SPUNE-MI MAI MULTE..."
+    };
+
+    srand((unsigned) time(NULL));
+
+    std::string sInput = "";
+    std::string sResponse = "";
+
+    while(1) {
+        std::cout << ">";
+        std::getline(std::cin, sInput);
+        int nSelection = rand() % 5;
+        sResponse = Response[nSelection];
+        std::cout << sResponse << std::endl;
+    }
+
+    return 0;
+}
